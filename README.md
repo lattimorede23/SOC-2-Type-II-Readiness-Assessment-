@@ -42,4 +42,4 @@ Every other project in this portfolio demonstrates technical control implementat
 
 ## Disclaimer
 
-This is a training and portfolio artifact only. The company, infrastructure, personnel, and findings described are entirely fictional and do not represent any actual organization, system, or individual
+This is a training and portfolio artifact only. The company, infrastructure, personnel, and findings described are entirely fictional and do not represent any actual organization, system, or individual.
