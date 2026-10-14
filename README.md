@@ -1,45 +1,66 @@
-# SOC 2 Type II Readiness Assessment — Lattimore Ledger
+# SOC 2 Type II Readiness Assessment: Lattimore Ledger
 
-A fictional SaaS company GRC readiness assessment | Portfolio and skills demonstration
+A readiness assessment for a fictional B2B SaaS payroll and HR platform, prepared as it would be before a SOC 2 Type II examination. It is scoped to the Security, Availability, and Confidentiality Trust Services Criteria (AICPA 2017 TSC, with the 2022 revised points of focus).
 
-**Lattimore Ledger is a fictional entity invented for this exercise. It shares the author's name only because the author (Derrick Lattimore) created the fictional scenario; this does not indicate any real commercial relationship. It is not a real operating company, has no customers or employees, and is not affiliated with any real business, past or present.**
+> **Fictional entity.** Lattimore Ledger was invented for this exercise. It shares the author's surname only because the author created the scenario. It is not a real company, has no customers or employees, and has no affiliation with any real business. All infrastructure, personnel, and findings are fictional.
 
 ---
 
-## About This Project
-
-This repository contains a SOC 2 Type II readiness assessment for a fictional B2B SaaS payroll and HR platform, built to demonstrate GRC and audit-readiness skills — control narrative writing, gap analysis, and executive reporting — for a commercial framework rather than the DoD/federal frameworks (STIG, NIST 800-53, RMF) covered elsewhere in this portfolio.
-
-Everything in this repository — the company, its infrastructure, personnel, and findings — is fictional. It was created as a training and portfolio exercise to practice producing readiness-assessment artifacts the way they would be developed ahead of a real SOC 2 Type II examination, using the AICPA 2017 Trust Services Criteria (with the Fall 2022 Revised Points of Focus).
-
-No content in this repository describes a real company, system, or individual.
-
-## The Fictional Company
-
-**Lattimore Ledger** — a Series B B2B SaaS company (\~120 employees) providing a cloud-hosted payroll and HR platform for mid-market employers, processing Social Security numbers, banking data, and compensation records on customers' behalf.
+## The fictional company
 
 | Attribute | Detail |
-| :---: | :---: |
+| :-- | :-- |
+| Business | Series B B2B SaaS (about 120 employees): cloud payroll and HR for mid-market employers |
+| Data processed | Social Security numbers, banking data, and compensation records, on customers' behalf |
 | Environment | AWS (EKS, RDS PostgreSQL, S3), multi-tenant shared-schema architecture |
-| Framework | AICPA 2017 Trust Services Criteria, with Revised Points of Focus (2022) |
 | Scope | Security (Common Criteria), Availability, Confidentiality |
-| Assessor | Derrick Lattimore |
+| Framework | AICPA 2017 Trust Services Criteria, revised points of focus (2022) |
+
+---
 
 ## Deliverables
 
-| File | Description |
-| :---: | :---: |
-| SYSTEM\_DESCRIPTION.md | Company overview, system boundaries, infrastructure and architecture, service commitments |
-| CONTROLS.md | 20 control narratives across Security, Availability, and Confidentiality, each with TSC mapping and implementation status |
-| GAP\_ASSESSMENT.md | 18 gaps traced by ID to their source control, with severity rating, remediation owner, and target date |
-| EXEC\_SUMMARY.md | Overall readiness posture, top 5 risks traced to specific gap IDs, and recommended path to audit-readiness |
+Read the documents in this order:
 
-The four documents are cross-referenced by ID: any control in CONTROLS.md marked less than fully implemented has exactly one matching row in GAP\_ASSESSMENT.md, every system or role named in a control narrative is established in SYSTEM\_DESCRIPTION.md, and every risk in EXEC\_SUMMARY.md traces back to a specific gap — mirroring how a real SOC 2 readiness package ties together across documents.
+| # | Document | Contents |
+| :-- | :-- | :-- |
+| 1 | [`SYSTEM_DESCRIPTION.md`](SYSTEM_DESCRIPTION.md) | Company overview, system boundary, infrastructure and architecture, service commitments |
+| 2 | [`CONTROLS.md`](CONTROLS.md) | 20 control narratives (SEC-01 to SEC-14, AVL-01 to AVL-03, CONF-01 to CONF-03), each with TSC mapping and implementation status |
+| 3 | [`GAP_ASSESSMENT.md`](GAP_ASSESSMENT.md) | 18 gaps (13 High, 5 Moderate), each traced to its source control, with severity, remediation owner, and target date |
+| 4 | [`EXEC_SUMMARY.md`](EXEC_SUMMARY.md) | Overall readiness posture, top 5 risks traced to specific gap IDs, recommended path to audit readiness |
 
-## Why This Project
+---
 
-Every other project in this portfolio demonstrates technical control implementation against a DoD-flavored technical checklist (STIG, NIST 800-53). This one is deliberately different: SOC 2's Trust Services Criteria are principles rather than a prescriptive control list, requiring judgment calls about what satisfies a given criterion rather than a lookup against a fixed baseline. It demonstrates the ability to write for a commercial audience, reason about an organization rather than a single system, and produce a forward-looking readiness assessment rather than a point-in-time compliance scan.
+## How the documents tie together
 
-## Disclaimer
+| Link | Rule | Check |
+| :-- | :-- | :-- |
+| Controls to gaps | Every control rated *Partially Implemented* or *Not Implemented* has exactly one gap row keyed to its control ID | 18 of 20 controls have a gap, with one row each. The other 2 (SEC-08 encryption, AVL-01 capacity management) are fully implemented. Each gap's "Current State" matches its control's status. |
+| Gaps to executive summary | Every risk in the executive summary cites the gap IDs behind it | All 9 cited gap IDs exist in the gap table |
+| Controls to system description | Every system, vendor, and role named in a control is established in the system description | |
 
-This is a training and portfolio artifact only. The company, infrastructure, personnel, and findings described are entirely fictional and do not represent any actual organization, system, or individual.
+The first two checks were verified programmatically on 2026-10-14.
+
+---
+
+## Why this project
+
+The rest of this portfolio works against prescriptive, DoD-oriented checklists:
+
+- [STIG hardening](https://github.com/lattimorede23/windows11-stig-hardening-lab)
+- [NIST RMF](https://github.com/lattimorede23/nist-rmf-authorization-package)
+- [NIST 800-53 mapping for Entra ID](https://github.com/lattimorede23/entra-id-zero-trust-iam-lab)
+
+SOC 2 is different. The Trust Services Criteria are principles, not a fixed control list, so each criterion needs a judgment call about what satisfies it. This project shows three skills that checklists don't exercise:
+
+- Writing for a commercial audience.
+- Reasoning about a whole organization rather than one system.
+- Producing a forward-looking readiness assessment instead of a point-in-time compliance scan.
+
+---
+
+## Revision history
+
+**2026-10-14.** Renamed `SYSTEM_DESCRIPTION1.md` to `SYSTEM_DESCRIPTION.md`. The `1` was an upload artifact, and every document already referred to the file by its intended name. The README was restructured with linked deliverables and the traceability checks above. Assessment content is unchanged.
+
+**Author:** Derrick Lattimore Jr. · B.S. Information Security, Shawnee State University
