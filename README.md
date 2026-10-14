@@ -30,7 +30,7 @@ No content in this repository describes a real company, system, or individual.
 | File | Description |
 | :---: | :---: |
 | SYSTEM\_DESCRIPTION.md | Company overview, system boundaries, infrastructure and architecture, service commitments |
-| CONTROLS.md | 20 control narratives across Security, Availability, and Confidentiality, each with TSC mapping and implementation status |
+| [CONTROLS.md](./CONTROLS.md) | 20 control narratives across Security, Availability, and Confidentiality, each with TSC mapping and implementation status |
 | GAP\_ASSESSMENT.md | 18 gaps traced by ID to their source control, with severity rating, remediation owner, and target date |
 | EXEC\_SUMMARY.md | Overall readiness posture, top 5 risks traced to specific gap IDs, and recommended path to audit-readiness |
 
